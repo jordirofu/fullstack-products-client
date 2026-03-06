@@ -1,6 +1,6 @@
 import type { Product } from "../types"
 import { FormatCurrency } from "../helpers"
-import { redirect, Link, useNavigate, Form, type ActionFunctionArgs, useFetcher } from "react-router-dom"
+import { redirect, useNavigate, Form, type ActionFunctionArgs, useFetcher } from "react-router-dom"
 import { deleteProduct } from "../services/ProductService"
 
 type ProductDetailsProps = {
