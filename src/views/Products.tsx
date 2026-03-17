@@ -1,10 +1,10 @@
 import { Link, useLoaderData, type ActionFunctionArgs } from "react-router-dom"
-import { getProducts, modifyAvailability } from "../services/ProductService";
-import ProductDetails from "../components/ProductDetails";
-import type { Product } from "../types";
+import { getProducts, modifyAvailability } from "../services/ProductService"
+import ProductDetails from "../components/ProductDetails"
+import type { Product } from "../types"
 
 export async function loader() {
-  const products = await getProducts();
+  const products = await getProducts()
 
   return products;
 
@@ -12,7 +12,7 @@ export async function loader() {
 
 export async function action({ request }: ActionFunctionArgs) {
   const data = Object.fromEntries(await request.formData())
-  await modifyAvailability(+data.id);
+  await modifyAvailability(+data.id)
 
 }
 
@@ -20,7 +20,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
 export default function Products() {
 
-  const products = useLoaderData() as Product[];
+  const products = useLoaderData() as Product[]
 
   return (
     <>

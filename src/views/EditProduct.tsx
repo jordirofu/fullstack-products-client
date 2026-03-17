@@ -1,31 +1,31 @@
-import { Link, Form, useActionData, type ActionFunctionArgs, redirect, type LoaderFunctionArgs, useLoaderData } from "react-router-dom";
-import ErrorMessage from "../components/ErrorMessage";
-import { getProductById, modifyProduct } from "../services/ProductService";
-import type { Product } from "../types";
-import ProductForm from "../components/ProductForm";
+import { Link, Form, useActionData, type ActionFunctionArgs, redirect, type LoaderFunctionArgs, useLoaderData } from "react-router-dom"
+import ErrorMessage from "../components/ErrorMessage"
+import { getProductById, modifyProduct } from "../services/ProductService"
+import type { Product } from "../types"
+import ProductForm from "../components/ProductForm"
 
 
 export async function action({ request, params }: ActionFunctionArgs) {
 
     const data = Object.fromEntries(await request.formData())
 
-    let error = '';
+    let error = ''
     if (Object.values(data).includes("")) {
-        error = 'Todos los campos son obligatorios';
+        error = 'Todos los campos son obligatorios'
     }
 
     if (error.length) {
         return error;
     }
 
-    await modifyProduct(data, Number(params.productId));
-    return redirect('/');
+    await modifyProduct(data, Number(params.productId))
+    return redirect('/')
 }
 
 export async function loader({ params }: LoaderFunctionArgs) {
-    const product = await getProductById(Number(params.productId));
+    const product = await getProductById(Number(params.productId))
     if (!product) {
-        return redirect('/');
+        return redirect('/')
     }
     return product;
 }
@@ -40,7 +40,7 @@ export default function EditProduct() {
 
     const error = useActionData();
 
-    const product = useLoaderData() as Product;
+    const product = useLoaderData() as Product
 
     return (
         <>
