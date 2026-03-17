@@ -1,7 +1,7 @@
 # Product Management App (Frontend)
 
 A modern web application to manage products through a simple and intuitive interface.  
-Users can create, update, and delete products, as well as view them in a structured table.
+Users can create, update, and delete products, as well as view them in a structured table. It is part of a full PERN stack project.
 
 This frontend application consumes a custom external API and demonstrates a clean architecture using React Router Data APIs and runtime validation.
 
