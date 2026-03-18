@@ -7,7 +7,7 @@ This frontend application consumes a custom external API and demonstrates a clea
 
 ## Live Demo
 
-https://fullstack-products-client.vercel.app/
+https://products-maintenance.vercel.app
 
 ## Features
 
